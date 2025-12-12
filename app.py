@@ -1,4 +1,5 @@
-from logic import load_movies, save_movies, add_movie, mark_watched, find_by_year
+from logic import load_movies, add_movie, save_movies, mark_watched, find_by_year, action_find_by_year, \
+    action_mark_watched, action_add_movie, action_load_movies
 
 DATA_FILE = "movies.json"
 
@@ -16,22 +17,17 @@ def main():
         choice = input("Выберите пункт: ")
 
         if choice == "1":
-            pass  # TODO: вывод списка фильмов
-
+            action_load_movies(movies)
         elif choice == "2":
-            pass  # TODO: ввод данных и вызов add_movie()
-
+            action_add_movie(movies)
         elif choice == "3":
-            pass  # TODO: ввод id и вызов mark_watched()
-
+            action_mark_watched(movies)
         elif choice == "4":
-            pass  # TODO: ввод года и вывод результатов
-
+            action_find_by_year(movies)
         elif choice == "0":
             save_movies(DATA_FILE, movies)
             print("До свидания!")
             break
-
         else:
             print("Неверный пункт меню.")
 
